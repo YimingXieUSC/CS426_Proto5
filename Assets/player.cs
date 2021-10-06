@@ -17,6 +17,8 @@ public class player : MonoBehaviour
     public bool startup;
     
     public float duration;
+
+    public float mov=.008f;
     // Start is called before the first frame update
     void Start()
     {
@@ -88,7 +90,7 @@ public class player : MonoBehaviour
     IEnumerator MoveDown() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position+=(Vector3.down*Time.deltaTime*.01f);
+             transform.position+=(Vector3.down*Time.deltaTime*mov);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
@@ -105,7 +107,7 @@ public class player : MonoBehaviour
      IEnumerator MoveUp() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position+=(Vector3.up*Time.deltaTime*.01f);
+             transform.position+=(Vector3.up*Time.deltaTime*mov);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
@@ -121,7 +123,7 @@ public class player : MonoBehaviour
      IEnumerator MoveRight() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position+=(Vector3.right*Time.deltaTime*.01f);
+             transform.position+=(Vector3.right*Time.deltaTime*mov);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
@@ -138,7 +140,7 @@ public class player : MonoBehaviour
      IEnumerator MoveLeft() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position+=(Vector3.left*Time.deltaTime*.01f);
+             transform.position+=(Vector3.left*Time.deltaTime*mov);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
