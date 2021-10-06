@@ -6,36 +6,26 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     
-    List<int> moveList;
+    public List<int> moveList;
 
-    int currentMove;
+    public int currentMove;
 
-    int moveSize;
+    public int moveSize;
 
-    int idx;
+    public int idx;
 
-    bool startup;
+    public bool startup;
     
-    float duration;
+    public float duration;
     // Start is called before the first frame update
     void Start()
     {
-        init();
-        startup=true;
+        moveList = new List<int>();
+
     }
 
 
     void init(){
-        moveList = new List<int>();
-        moveList.Add(0);
-        moveList.Add(2);
-        moveList.Add(0);
-        moveList.Add(4);
-        moveList.Add(0);
-        moveList.Add(1);
-        moveList.Add(0);
-        moveList.Add(3);
-        moveList.Add(0);
         currentMove=moveList[0];
         moveSize= moveList.Count;
         idx=0;
@@ -96,7 +86,10 @@ public class player : MonoBehaviour
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         NextMove();
+         if (elapsedTime == duration)
+         {
+            NextMove(); 
+         }
      }
 
      IEnumerator MoveUp() {
@@ -106,7 +99,10 @@ public class player : MonoBehaviour
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         NextMove();
+         if (elapsedTime == duration)
+         {
+            NextMove(); 
+         }
      }
      IEnumerator MoveRight() {
          float elapsedTime = 0f;
@@ -115,7 +111,11 @@ public class player : MonoBehaviour
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         NextMove();
+         if (elapsedTime == duration)
+         {
+            NextMove(); 
+         }
+         
      }
      IEnumerator MoveLeft() {
          float elapsedTime = 0f;
@@ -124,7 +124,10 @@ public class player : MonoBehaviour
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         NextMove();
+         if (elapsedTime == duration)
+         {
+            NextMove(); 
+         }
      }
      IEnumerator pause() {
          float elapsedTime = 0f;
@@ -132,6 +135,9 @@ public class player : MonoBehaviour
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         NextMove();
+         if (elapsedTime == duration)
+         {
+            NextMove(); 
+         }
      }
 }
