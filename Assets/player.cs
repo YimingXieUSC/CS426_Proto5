@@ -17,10 +17,16 @@ public class player : MonoBehaviour
     public bool startup;
     
     public float duration;
+
+    Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
         moveList = new List<int>();
+        animator = GetComponent<Animator>();
+        animator.Play("RWalk");
 
     }
 
@@ -41,8 +47,6 @@ public class player : MonoBehaviour
         else{
            currentMove=-1; 
         }
-        
-
     }
 
     // Update is called once per frame
