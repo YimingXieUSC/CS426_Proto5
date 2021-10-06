@@ -20,7 +20,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveList = new List<int>();
+        //moveList = new List<int>();
 
     }
 
@@ -34,14 +34,17 @@ public class player : MonoBehaviour
 
     void NextMove(){
         idx++;
-        if (idx<moveSize)
-        {
-            currentMove=moveList[idx];
+        if(idx>=moveSize){
+            currentMove=-1;
         }
         else{
-           currentMove=-1; 
+  
+            currentMove=moveList[idx];
         }
         
+
+
+
 
     }
 
@@ -76,57 +79,76 @@ public class player : MonoBehaviour
         {
             
         }
+        else{
+
+        }
     }
 
 
     IEnumerator MoveDown() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position=(Vector2.down*Time.deltaTime*.05f);
+             transform.position+=(Vector3.down*Time.deltaTime*.01f);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         if (elapsedTime == duration)
+         if (elapsedTime >= duration)
          {
-            NextMove(); 
+            NextMove();
+            Debug.Log("move down");
+            StopAllCoroutines();
+            yield break;
+            
          }
      }
 
      IEnumerator MoveUp() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position=(Vector2.up*Time.deltaTime*.05f);
+             transform.position+=(Vector3.up*Time.deltaTime*.01f);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         if (elapsedTime == duration)
+         if (elapsedTime >= duration)
          {
             NextMove(); 
+            Debug.Log("move up");
+            StopAllCoroutines();
+            yield break;
+            
          }
      }
      IEnumerator MoveRight() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position=(Vector2.right*Time.deltaTime*.05f);
+             transform.position+=(Vector3.right*Time.deltaTime*.01f);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         if (elapsedTime == duration)
+         if (elapsedTime >= duration)
          {
             NextMove(); 
+            Debug.Log("move right");
+            StopAllCoroutines();
+            yield break;
+            
          }
          
      }
      IEnumerator MoveLeft() {
          float elapsedTime = 0f;
          while (elapsedTime < duration) {
-             transform.position=(Vector2.left*Time.deltaTime*.05f);
+             transform.position+=(Vector3.left*Time.deltaTime*.01f);
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         if (elapsedTime == duration)
+         if (elapsedTime >= duration)
          {
             NextMove(); 
+            Debug.Log("move left");
+            StopAllCoroutines();
+            yield break;
+            
          }
      }
      IEnumerator pause() {
@@ -135,9 +157,13 @@ public class player : MonoBehaviour
              elapsedTime += Time.deltaTime;
              yield return null;
          }
-         if (elapsedTime == duration)
+         if (elapsedTime >= duration)
          {
             NextMove(); 
+            Debug.Log("pause");
+            StopAllCoroutines();
+            yield break;
+            
          }
      }
 }
