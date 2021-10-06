@@ -1951,3 +1951,19 @@ Received Import Request.
 Start importing Assets/Sprites/Robot_Walk2/Untitled_Artwork-3.png using Guid(7f9f6c2e905ba406abe76a8000ac65bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70d81a54d4184d30886bea65a828dbf') in 0.016342 seconds 
   Import took 0.019245 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 1241.511914 seconds.
+  path: Assets/Animation/RobotController.controller
+  artifactKey: Guid(5f3b29b01d07a469b84080ff1b2a3184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/RobotController.controller using Guid(5f3b29b01d07a469b84080ff1b2a3184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '737e8b7908f200dcf5e5f14e0d933ad2') in 0.014751 seconds 
+  Import took 0.026198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000875 seconds.
+  path: Assets/Animation/RobotController.controller
+  artifactKey: Guid(5f3b29b01d07a469b84080ff1b2a3184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/RobotController.controller using Guid(5f3b29b01d07a469b84080ff1b2a3184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '737e8b7908f200dcf5e5f14e0d933ad2') in 0.003073 seconds 
+  Import took 0.006588 seconds .
+
